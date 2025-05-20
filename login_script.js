@@ -7,9 +7,15 @@ if (!process.env.ORIGINS.match(REQUIRED_ORIGIN_PATTERN)) {
     "Pattern match:",
     process.env.ORIGINS.match(REQUIRED_ORIGIN_PATTERN)
   );
-  console.log("https://gabrielcodeproject.github.io".match(pattern)); // should NOT be null
-  console.log("https://gabrielcodeproject.github.io/".match(pattern)); // may be null
-  console.log("https://gabrielcodeproject.github.io/pool".match(pattern)); //will be null
+  console.log(
+    "https://gabrielcodeproject.github.io".match(REQUIRED_ORIGIN_PATTERN)
+  ); // should NOT be null
+  console.log(
+    "https://gabrielcodeproject.github.io/".match(REQUIRED_ORIGIN_PATTERN)
+  ); // may be null
+  console.log(
+    "https://gabrielcodeproject.github.io/pool".match(REQUIRED_ORIGIN_PATTERN)
+  ); //will be null
   throw new Error(
     "process.env.ORIGINS MUST be comma separated list \
     of origins that login can succeed on."
